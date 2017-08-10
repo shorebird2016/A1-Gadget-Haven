@@ -1,0 +1,14 @@
+<!--for /reset-pwd route partial HTML to reset password, still share same controller-->
+<div class="container-fluid center-block border-gray">
+    <div class="title-style">
+        Reset Password
+        <a href="#!/home"><img src="asset/image/logo.png" class="img img-rounded pull-right logo"></a>
+    </div>
+    <div>
+        <h4>Please enter your email address to receive link and reset password.</h4>
+        <label for="email-id" class="field-label-style">Email</label>
+        <input id="email-id" type="email" class="field-style" placeholder="foo@bar.com">
+
+        <button class="btn signup-style" ng-click="SHOPPING_CTRL.sendResetPasswordEmail()">Send reset link</button>
+    </div>
+</div>

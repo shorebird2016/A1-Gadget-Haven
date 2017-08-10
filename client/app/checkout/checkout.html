@@ -1,0 +1,70 @@
+
+<!--TODO a shared header with progress bar of variable length -->
+<div class="checkout-header">
+    <img ng-src="asset/image/logo.png" class="logo"></a>
+    <div class="checkout-progress"></div>
+</div>
+
+<div class="checkout-container">
+    <div class="checkout-info">
+        <!-- shipping information-->
+        <h2>Shipping Information</h2>
+        <section class="checkout-shipinfo">
+            <input type="text" class="checkout-field1" placeholder="First Name">
+            <input type="text" class="checkout-field1" placeholder="Last Name">
+            <input type="phone" class="checkout-field1" placeholder="Phone Number"><br/>
+            <input type="text" class="checkout-field2" placeholder="Street">
+            <input type="text" class="checkout-field1" placeholder="City">
+            <input type="text" class="checkout-field1" placeholder="State">
+            <input type="text" class="checkout-field1" placeholder="ZIP"><br/>
+            <input type="email" class="checkout-field2" placeholder="email">
+            <textarea class="checkout-field2" placeholder="Message"></textarea>
+        </section>
+
+        <!-- payment information-->
+        <h2>Payment Information</h2>
+        <section class="checkout-payment">
+            <input type="text" class="checkout-field2" placeholder="Credit card"><br/>
+            <!--<span class="checkout-label">Expire Month</span>-->
+            <!--<span class="checkout-label">Expire Year</span>-->
+            <!--<span class="checkout-label">Expire CVC</span>-->
+            <input type="text" class="checkout-field1" placeholder="Month">
+            <input type="text" class="checkout-field1" placeholder="Year">
+            <input type="text" class="checkout-field1" placeholder="CVC">
+        </section>
+    </div>
+
+    <!--for subtotal area-->
+    <section class="cart-section2 checkout-subttl">
+        <h3>Subtotal</h3>
+        <table>
+            <tr class="subttl-row" ng-repeat="ITEM in SHOPPING_CTRL.cartItems">
+                <td class="subttl-item">{{SHOPPING_CTRL.getCartItemByIndex(ITEM.productIndex).name}}</td>
+                <td class="subttl-price">${{SHOPPING_CTRL.calcItemSubtotal($index)}}</td>
+            </tr>
+            <tr>
+                <td><hr/></td>
+                <td><hr size="10"/></td>
+            </tr>
+            <!-- sum total -->
+            <tr class="subttl-row">
+                <td class="subttl-item">Total</td>
+                <td class="subttl-price">${{SHOPPING_CTRL.calcCartTotal()}}</td>
+            </tr>
+        </table>
+        <div class="cart-bottom"><!--NOTE: wrap button around div then center-block works -->
+            <button class="btn-main center-block" ng-click="SHOPPING_CTRL.navTo('order')">Place Order</button>
+        </div>
+    </section>
+</div>
+
+<!-- Policy block -->
+<section class="checkout-policy">
+    <p>Within 30 days of delivery, you may return new, unopened merchandise in its original condition.
+        Exceptions and restrictions apply.  See <a href="#!/return">Return Policy</a> for details.</p>
+    <p>For an item sold by Gadget Haven Inc: When you click the "Place Order" button, we'll send you an
+        email message acknowledging receipt of your order.  Your contract to purchase and item will not be
+        complete until we send you an email notifying you that the item has been shipped.
+    </p>
+</section>
+<div ng-include="'app/common/footer.html'"></div>

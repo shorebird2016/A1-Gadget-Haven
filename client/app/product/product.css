@@ -1,0 +1,26 @@
+/*=== for product page === */
+.heading-3 {
+  text-align: center; }
+
+.product-image {
+  border-radius: 10px; }
+
+.feature {
+  background: linear-gradient(30deg, #e8f6ff, #ffdaed); }
+
+.feature-list {
+  list-style-type: square; }
+
+.thumb {
+  width: 80px;
+  margin: 20px;
+  cursor: pointer; }
+
+.thumb-container {
+  display: inline-block; }
+
+.btn-to-cart {
+  float: right;
+  margin-right: 10px;
+  margin-top: -8px; }
+

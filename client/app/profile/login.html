@@ -1,0 +1,38 @@
+<!--for /login route partial HTML, still share same controller-->
+<div class="center-block form-container-style border-gray">
+    <div class="form-style">
+        <div class="title-style">
+            <span>Log in</span>
+            <a href="http://localhost:3000/index.html">
+                <img src="asset/image/logo.png" class="img img-rounded pull-right logo"></a>
+        </div>
+        <form>
+            <label class="field-label-style">Email</label>
+            <input type="email" class="field-style" placeholder="foo@bar.com"
+                ng-model="SHOPPING_CTRL.email">
+            <label class="field-label-style">Password</label>
+            <input type="password" class="field-style" placeholder="1234passwOrd"
+                ng-model="SHOPPING_CTRL.password">
+            <input type="button" class="field-style signup-style white" value="Log in"
+                ng-click="SHOPPING_CTRL.login()">
+            <div class="forget-pwd-style">
+                <a href="#!/reset-pwd">Forget password?</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="center-block have-account-style gray">
+    <span>Don't have an account? <a href="#!/profile">Register new account</a></span>
+</div>
+
+<div id="msg-dlg-id">
+    <h3>Sorry! you are not registered!</h3><br/>
+
+    <h4>Please click link below to register first.</h4>
+    <a href="#!/profile">Register new account</a><br/>
+
+    <button style="margin-top: 100px; margin-bottom: 20px;"
+            ng-click="SHOPPING_CTRL.hideDialog()">Close</button>
+</div>
+
+<!--ng-show="SHOPPING_CTRL.dlgVisible"-->

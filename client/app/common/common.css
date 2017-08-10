@@ -1,0 +1,57 @@
+/*=== for nav bar === */
+nav {
+  font-size: 10pt; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.navbar-nav {
+  float: none; }
+
+.navbar-brand {
+  padding: 0; }
+
+.navbar-text {
+  font-size: 6pt;
+  max-width: 30px;
+  max-height: 30px; }
+
+#navbar-menu {
+  position: absolute;
+  top: 55px;
+  left: -20px;
+  width: 140px;
+  background: lightgray;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  #navbar-menu li {
+    cursor: pointer;
+    padding: 10px 5px 10px 5px; }
+  #navbar-menu li:hover {
+    background: lightblue; }
+
+.logo-style {
+  width: 50px; }
+
+#carousel-div {
+  margin-top: 60px; }
+
+/*=== for search bar === */
+.srch-field {
+  border-radius: 10px 0 0 10px;
+  min-width: 400px; }
+
+.srch-btn {
+  border-radius: 0 10px 10px 0; }
+
+.menubar {
+  background: lightyellow;
+  height: 25px;
+  padding: 5px 0 5px 0; }
+
+.menubar > ul > li {
+  display: inline-block;
+  padding: 0 10px 0 10px; }
+
+/*# sourceMappingURL=common.css.map */

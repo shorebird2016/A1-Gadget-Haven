@@ -1,0 +1,54 @@
+
+<!-- registration form / edit profile -->
+<div class="center-block form-container-style border-gray" id="register-id">
+    <div class="form-style">
+        <div class="title-style">
+            <span>Your Profile</span>
+            <a href="#!/home"><img src="asset/image/logo.png" class="img img-rounded pull-right logo"></a>
+        </div>
+        <form>
+            <label class="field-label-style">Login name</label>
+            <input type="text" class="field-style" placeholder="your screen name" required
+                   ng-model="SHOPPING_CTRL.profileLoginName">
+
+            <label class="field-label-style">Password</label>
+            <input type="password" class="field-style" placeholder="1234passwOrd" required
+                   ng-model="SHOPPING_CTRL.profilePassword">
+            <label class="field-label-style">Confirm Password</label>
+            <input type="password" class="field-style" placeholder="confirm password" required
+                   ng-model="SHOPPING_CTRL.profilePasswordConfirm">
+
+            <label class="field-label-style">Email</label>
+            <input type="email" class="field-style" placeholder="foo@bar.com"
+                   ng-disabled="SHOPPING_CTRL.userLoggedIn"
+                   ng-model="SHOPPING_CTRL.profileEmail">
+
+            <label class="field-label-style">Country</label>
+            <select class="combo" ng-model="SHOPPING_CTRL.profileCountry"
+                    ng-change="SHOPPING_CTRL.handleCountryChange()">
+                <option value="US">US</option>
+                <option value="China">China</option>
+                <option value="Canada">Canada</option>
+            </select>
+
+            <label class="field-label-style">State</label>
+            <select class="combo" ng-model="SHOPPING_CTRL.profileState"
+                ng-options="state for state in SHOPPING_CTRL.getStateList(SHOPPING_CTRL.profileCountry)"
+                ng-change="SHOPPING_CTRL.handleStateChange()">
+            </select><br/>
+
+            <label class="field-label-style">City</label>
+            <select class="combo-city" ng-model="SHOPPING_CTRL.profileCity"
+                ng-options="city for city in SHOPPING_CTRL.getCityList(SHOPPING_CTRL.profileState)">
+            </select><br/>
+
+            <label class="field-label-style">Gender</label>
+            <input type="radio" name="gender" value="male" ng-model="SHOPPING_CTRL.profileGender">Male
+            <input type="radio" name="gender" value="female" ng-model="SHOPPING_CTRL.profileGender">Female<br/>
+            <input type="checkbox" id="agree-id" checked ng-model="SHOPPING_CTRL.profileAgree">Agree to terms
+            <input type="submit" class="field-style signup-style" value="Save" ng-click="SHOPPING_CTRL.saveProfile()">
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,54 @@
+
+<div ng-include="'app/common/header.html'"></div>
+
+<main>
+    <!--for order list-->
+    <section class="cart-section1">
+        <h2>Shopping Cart</h2>
+        <div class="item-block" ng-repeat="ITEM in SHOPPING_CTRL.cartItems">
+            <p class="item-name">{{SHOPPING_CTRL.getCartItemByIndex(ITEM.productIndex).name}}
+                <i class="fa fa fa-plus-circle btn-icon" ng-click="SHOPPING_CTRL.incCartItemQuantity($index)"></i>
+                <i class="fa fa-minus-circle btn-icon" ng-click="SHOPPING_CTRL.decCartItemQuantity($index)"></i>
+                <i class="fa fa-trash btn-icon" ng-click="SHOPPING_CTRL.removeCartItem($index)"></i>
+            </p>
+            <img class="cart-img" ng-src="{{SHOPPING_CTRL.getCartImage(ITEM.productIndex)}}">
+            <div class="cart-detail">{{SHOPPING_CTRL.getCartItemByIndex(ITEM.productIndex).name}}</div>
+            <div class="cart-ctrl">
+                <span class="cart-qty">Quantity: {{SHOPPING_CTRL.cartItems[$index].quantity}}</span>
+            </div>
+            <p class="cart-price">${{SHOPPING_CTRL.getCartItemByIndex(ITEM.productIndex).price}}</p>
+            <hr/>
+        </div>
+    </section>
+
+    <!--for subtotal area-->
+    <section class="cart-section2">
+        <h3>Subtotal</h3>
+        <table>
+            <tr class="subttl-row" ng-repeat="ITEM in SHOPPING_CTRL.cartItems">
+                <td class="subttl-item">{{SHOPPING_CTRL.getCartItemByIndex(ITEM.productIndex).name}}</td>
+                <td class="subttl-price">${{SHOPPING_CTRL.calcItemSubtotal($index)}}</td>
+            </tr>
+            <tr>
+                <td><hr/></td>
+                <td><hr size="10"/></td>
+            </tr>
+
+            <!-- sum total -->
+            <tr class="subttl-row">
+                <td class="subttl-item">Total</td>
+                <td class="subttl-price">${{SHOPPING_CTRL.calcCartTotal()}}</td>
+            </tr>
+        </table>
+        <div class="cart-bottom"><!--NOTE: wrap button around div then center-block works -->
+            <button class="btn-main center-block" ng-click="SHOPPING_CTRL.navTo('checkout')">Check Out</button>
+        </div>
+    </section>
+
+    <!--for action buttons-->
+    <div class="cart-bottom">
+        <button class="btn-main center-block" ng-click="SHOPPING_CTRL.navTo('home')">Continue Shopping</button>
+    </div>
+</main>
+
+<div ng-include="'app/common/footer.html'"></div>

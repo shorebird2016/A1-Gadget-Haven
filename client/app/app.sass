@@ -1,0 +1,77 @@
+
+*, body
+  font-family: Verdana
+  margin: 0
+  padding: 0
+
+li img
+  width: 30px
+
+.circular
+  border-radius: 50%
+
+.debug
+  border: 1px solid red
+
+body
+  background: linear-gradient(white, #fafffc)
+  animation: fly-in 0.3s linear 0.05s
+
+h3
+  text-align: center
+
+.btn-main
+  background: skyblue
+  font-weight: bold
+  font-size: large
+  border-radius: 8px
+  padding: 8px
+  display: inline-block
+
+.btn-anchor
+  @extend .btn-main
+  max-width: 300px
+
+.panel
+  width: 350px
+
+.logo
+  width: 60px
+  display: inline-block
+  border-radius: 50%
+  animation: spinning 50s linear infinite
+
+@keyframes fly-in
+  0%
+    transform: translate(-50%, 0%) scale(0.3) rotate(90deg)
+  25%
+    transform: translate(-40%, 0%) scale(0.5) rotate(65deg)
+  50%
+    transform: translate(-25%, 0%) scale(0.7) rotate(35deg)
+  75%
+    transform: translate(-10%, 0%) scale(0.9) rotate(10deg)
+  100%
+    transform: translate(0%, 0%) scale(1) rotate(0deg)
+
+@keyframes spinning
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.btn-icon
+  cursor: pointer
+  font-size: x-large
+
+.span-pad
+  padding: 0 5px 0 50px
+
+.fa-trash-o
+  cursor: pointer
+
+@import "home/home"
+@import "common/common"
+@import "product/product"
+@import "profile/profile"
+@import "cart/cart"
+@import "checkout/checkout"

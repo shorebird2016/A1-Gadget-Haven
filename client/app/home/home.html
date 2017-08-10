@@ -1,0 +1,37 @@
+
+<div ng-include="'app/common/header.html'"></div>
+
+<!-- a carousel for special items -->
+<section class="sb-carousel">
+    <div class="sb-slider-box" ng-style="SHOPPING_CTRL.styleSliderBoxLeft">
+        <img ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
+             ng-src="asset/image/slide/{{IMG_NAME}}.png" class="sb-slide-image">
+    </div>
+    <span id="nav-next" ng-click="SHOPPING_CTRL.slideForward()" >&#8678;</span>
+    <span id="nav-prev" ng-click="SHOPPING_CTRL.slideBackward()" >&#8680;</span>
+    <div class="sb-circle-box" ng-style="SHOPPING_CTRL.styleCircleBox">
+        <button class="sb-circle" ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
+            ng-click="SHOPPING_CTRL.goToSlide($index)" ng-style="SHOPPING_CTRL.styleCircleOpacity"></button>
+    </div>
+</section>
+
+<!-- rows of cards with product description, price, high level attractions -->
+<section>
+    <div class="product-strip">
+        <div class="panel panel-success" ng-repeat="PROD in SHOPPING_CTRL.products">
+            <div class="panel-heading">{{PROD.name}}</div>
+            <div class="panel-body">
+                <a href="#!/product" ng-click="SHOPPING_CTRL.clickProduct($index)">
+                    <img class="img img-rounded" ng-src="{{PROD.image_url + 'thumbnail/tn-1.jpg'}}"></a>
+            </div>
+            <div class="panel-footer">${{PROD.price}}
+                <span class="pull-right">{{SHOPPING_CTRL.getProductStatus(PROD)}}</span></div>
+        </div>
+    </div>
+</section>
+
+
+<div ng-include="'app/common/footer.html'"></div>
+
+
+<!-- PROD.inventory TODO better looking search ??? <form id="hbz-searchbox" action="/search" method="get" class="debug" style="display: inline-block;">-->

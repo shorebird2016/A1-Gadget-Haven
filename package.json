@@ -1,0 +1,36 @@
+{
+  "name": "dance",
+  "version": "0.0.1",
+  "description": "Dance instructions",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.13.3",
+    "path": "*",
+    "multer": "*",
+    "fs-extra": "*",
+    "multiparty": "*",
+    "directory-tree": "*",
+    "traverse": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/heroku/dance",
+  "author": "ATC"
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shoppingApp" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="ATC">
+    <meta name="description" content="A CodeGarage class full-stack project using M E A N framework">
+    <meta name="keyword" content="shopping gadgets MEAN javascript HTML CSS Angular Bootstrap React">
+    <title>Shopping at Gadget Haven</title>
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7.css">
+    <link rel="stylesheet" href="app/app.css">
+</head>
+
+<body ng-controller="shoppingCtrl as SHOPPING_CTRL">
+    <div ng-view></div>
+
+    <!-- JS includes (all local for speed and debug) -->
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="lib/bootstrap-3.3.7.js"></script>
+    <script src="lib/angular-1.6.4.js"></script>
+    <script src="lib/angular-route-1.6.4.js"></script>
+    <script src="lib/localforage.nopromises.js"></script>
+    <script src="app.js"></script>
+    <script src="app/product/product.js"></script>
+    <script src="app/profile/profile.js"></script>
+    <script>
+       //init localforage  TODO move into controller???????
+       localforage.setDriver([localforage.LOCALSTORAGE], function (err, value) {
+          localforage.getItem(KEY_USERS, function (err, users) {
+             if (err) console.log("*** Oops ==> ", err);
+             console.log(users);
+          });
+          console.log("----INIT localforage in index.html -----");
+       });
+    </script>
+</body>
+</html>
+

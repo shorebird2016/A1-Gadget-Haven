@@ -1,0 +1,32 @@
+<!--page for admin to manage users-->
+
+<div class="container-fluid" style="background: #fcfff6">
+    <h3>Managing Registered Users</h3>
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>email</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Gender</th>
+        </tr>
+        </thead>
+        <tbody id="tbl-body">
+            <tr ng-repeat="USER in SHOPPING_CTRL.users">
+                <td> {{USER.loginName}}</td>
+                <td> {{USER.email}}</td>
+                <td> {{USER.country}}</td>
+                <td> {{USER.state}}</td>
+                <td> {{USER.city}}</td>
+                <td> {{USER.gender}}</td>
+                <td><i class="fa fa-trash-o"
+                       ng-click="SHOPPING_CTRL.removeUser(USER)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" ng-click="SHOPPING_CTRL.logout()">Log out</a>
+</div>
+
+<div ng-include="'app/common/footer.html'"></div>

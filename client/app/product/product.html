@@ -1,0 +1,56 @@
+<!-- a page to present single product details -->
+<div ng-include="'app/common/header.html'"></div>
+
+<!-- product photos -->
+<div class="container-fluid" ng-controller="productCtrl as CTRL">
+    <div class="row" id="PROD_1">
+        <h3 class="heading-3">{{SHOPPING_CTRL.curProduct.name}}</h3>
+        <!-- bstp columns for image/video pane with buttons -->
+        <figure class="col-sm-7">
+            <img ng-src="{{SHOPPING_CTRL.curProduct.image_url + 'full-image/' +
+                SHOPPING_CTRL.activeImage}}" width="100%" class="product-image">
+
+            <!-- a row to thumbnails -->
+            <div class="thumb-container" ng-repeat="THUMB in SHOPPING_CTRL.curProduct.images">
+                <img class="thumb" ng-src="{{SHOPPING_CTRL.curProduct.image_url + 'full-image/' + THUMB}}"
+                     ng-click="SHOPPING_CTRL.clickThumb($index)">
+            </div>
+        </figure>
+
+        <!-- bstp column for detail pane -->
+        <article class="col-sm-5 feature">
+            <p>{{SHOPPING_CTRL.curProduct.description}}</p>
+            <ul class="feature-list">
+                <li ng-repeat="FEATURE in SHOPPING_CTRL.curProduct.feature">{{FEATURE}}</li>
+            </ul>
+        </article>
+    </div>
+    <div class="row">
+        <div class="panel-footer prd-footer">
+            Our Price: ${{SHOPPING_CTRL.curProduct.price}}
+                ({{SHOPPING_CTRL.getProductStatus(SHOPPING_CTRL.curProduct)}})
+            <span class="span-pad">Quanty:</span>
+            <!--<select id="product-qty-id">-->
+                <!--<option value="1">1</option>-->
+                <!--<option value="2">2</option>-->
+                <!--<option value="3">3</option>-->
+                <!--<option value="4">4</option>-->
+                <!--<option value="5">5</option>-->
+                <!--<option value="6">6</option>-->
+            <!--</select>-->
+            <select id="product-qty-id" ng-model="SHOPPING_CTRL.addQuantity"
+                ng-options="v for v in SHOPPING_CTRL.quantities">
+            </select>
+            <button class="btn-main"
+                ng-click="SHOPPING_CTRL.addToCart(SHOPPING_CTRL.curProduct.id)">
+                Add to cart</button></div>
+    </div>
+</div>
+
+<!--for action buttons-->
+<div class="cart-bottom">
+    <button class="btn-main center-block" ng-click="SHOPPING_CTRL.navTo('home')">Continue Shopping</button>
+    <!--<a href="#/!home" class="btn-anchor center-block">dfss</a>-->
+</div>
+
+<div ng-include="'app/common/footer.html'"></div>

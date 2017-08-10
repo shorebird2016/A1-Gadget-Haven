@@ -1,0 +1,25 @@
+.item-block {
+  background: lavenderblush; }
+
+.cart-img {
+  display: inline-block;
+  margin: 10px;
+  width: 280px;
+  height: 180px; }
+
+.cart-detail {
+  width: 20%;
+  display: inline-block;
+  flex: 1;
+  font-size: large; }
+
+.cart-ctrl {
+  width: 15%;
+  flex: 1;
+  display: inline-block; }
+
+.cart-inc-dec {
+  font-size: larger;
+  display: inline-block; }
+
+/*# sourceMappingURL=cart.css.map */
