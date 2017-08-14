@@ -2,7 +2,7 @@
 <div ng-include="'app/common/header.html'"></div>
 
 <!-- product photos -->
-<div class="container-fluid" ng-controller="productCtrl as CTRL">
+<div class="container-fluid">
     <div class="row" id="PROD_1">
         <h3 class="heading-3">{{SHOPPING_CTRL.curProduct.name}}</h3>
         <!-- bstp columns for image/video pane with buttons -->
@@ -29,19 +29,11 @@
         <div class="panel-footer prd-footer">
             Our Price: ${{SHOPPING_CTRL.curProduct.price}}
                 ({{SHOPPING_CTRL.getProductStatus(SHOPPING_CTRL.curProduct)}})
-            <span class="span-pad">Quanty:</span>
-            <!--<select id="product-qty-id">-->
-                <!--<option value="1">1</option>-->
-                <!--<option value="2">2</option>-->
-                <!--<option value="3">3</option>-->
-                <!--<option value="4">4</option>-->
-                <!--<option value="5">5</option>-->
-                <!--<option value="6">6</option>-->
-            <!--</select>-->
+            <span class="span-pad" ng-show="SHOPPING_CTRL.quantities.length > 0">Quanty:</span>
             <select id="product-qty-id" ng-model="SHOPPING_CTRL.addQuantity"
-                ng-options="v for v in SHOPPING_CTRL.quantities">
+                ng-options="v for v in SHOPPING_CTRL.quantities" ng-show="SHOPPING_CTRL.quantities.length > 0">
             </select>
-            <button class="btn-main"
+            <button class="btn-main"  ng-show="SHOPPING_CTRL.quantities.length > 0"
                 ng-click="SHOPPING_CTRL.addToCart(SHOPPING_CTRL.curProduct.id)">
                 Add to cart</button></div>
     </div>
@@ -50,7 +42,6 @@
 <!--for action buttons-->
 <div class="cart-bottom">
     <button class="btn-main center-block" ng-click="SHOPPING_CTRL.navTo('home')">Continue Shopping</button>
-    <!--<a href="#/!home" class="btn-anchor center-block">dfss</a>-->
 </div>
 
 <div ng-include="'app/common/footer.html'"></div>

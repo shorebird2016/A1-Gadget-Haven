@@ -12,27 +12,22 @@
                 <a class="dropdown-toggle" data-toggle="dropdown">Category
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Audio</a></li>
+                    <li ng-repeat="CATEGORY in SHOPPING_CTRL.categories">
+                        <a ng-click="SHOPPING_CTRL.showThumbnails(CATEGORY)">{{CATEGORY}}</a></li>
                     <li><a href="#" class="divider"></a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Accessories</a></li>
                 </ul>
             </li>
 
             <!-- search widget -->
-            <form class="navbar-form navbar-left" method="get" action="/search"
-                  style="display: inline-block; margin-top: 15px;">
-                <div class="input-group">
-                    <input type="search" placeholder="Search your favorite items here..."
-                           class="form-control srch-field">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary srch-btn">Search</button>
-                    </span>
-                </div>
+            <form class="navbar-form navbar-left" style="display: inline-block; margin-top: 15px;">
+                <input type="search" placeholder="Search your favorite items here..."
+                   class="form-control srch-field" ng-model="SHOPPING_CTRL.searchString"
+                   ng-change="SHOPPING_CTRL.searchStringChange()">
+                <button class="btn btn-primary srch-btn" ng-click="SHOPPING_CTRL.startSearch()"
+                    ng-keypress="SHOPPING_CTRL.searchViaKeyPress($event.keyCode)">Search</button>
             </form>
 
             <!-- buttons -->
-            <li class="pull-right"><a href="#!/cart"><img src="asset/image/icon/cart.svg"></a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">
                     <img src="asset/image/icon/profile.svg">
@@ -45,20 +40,32 @@
                     <li ng-show="!SHOPPING_CTRL.userLoggedIn"><a href="#!/login">Login</a></li>
                 </ul>
             </li>
+            <li><a href="#!/cart"><img src="asset/image/icon/cart.svg"></a></li>
         </ul>
 
         <!-- secondary menu for promotional items-->
         <nav class="menubar">
-            <ul style="display: inline-block">
+            <span>{{SHOPPING_CTRL.curCategory}}</span>
+            <ul>
                 <li><a href="#!/best_seller">Best Sellers</a></li>
                 <li><a href="#!/new_arrival">New Arrivals</a></li>
                 <li><a href="#!/on_sale">On Sale This Week</a></li>
                 <li><a href="#!/featured">Featured</a></li>
                 <li><a href="#!/deals">Last Minute Deal</a></li>
             </ul>
-            <span ng-show="SHOPPING_CTRL.userLoggedIn" style="float: right">Welcome {{SHOPPING_CTRL.profileLoginName}} !</span>
+            <span ng-show="SHOPPING_CTRL.userLoggedIn">Welcome {{SHOPPING_CTRL.profileLoginName}} !</span>
         </nav>
     </nav>
+
+    <!--search list - most time hidden till someone types some search text-->
+    <section class="panel srch-result" ng-show="SHOPPING_CTRL.showSearchList">
+        <ul class="panel-body">
+            <li ng-repeat="STR in SHOPPING_CTRL.searchList" class="srch-item">
+                <img ng-src="{{SHOPPING_CTRL.getThumbnailByName(STR)}}">
+                <p ng-click="SHOPPING_CTRL.clickSearchList($index)">{{STR}}</p>
+            </li>
+        </ul>
+    </section>
 
 </header>
 

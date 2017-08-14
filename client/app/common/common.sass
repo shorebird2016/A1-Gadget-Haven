@@ -17,10 +17,14 @@ nav
 .navbar-brand
   padding: 0
 
+.navbar-header:hover
+  transform: scale(2) translate(30%, 40%)
+
 .navbar-text
   font-size: 6pt
-  max-width: 30px
-  max-height: 30px
+  max-width: 35px
+  max-height: 35px
+  opacity: 1
 
 #navbar-menu
   position: absolute
@@ -44,22 +48,65 @@ nav
   margin-top: 60px
 
 /*=== for search bar ===*/
+.navbar-form
+  width: 65%
+  padding: 0
+
 .srch-field
   border-radius: 10px 0 0 10px
-  min-width: 400px
+  min-width: 85%
 
 .srch-btn
   border-radius: 0 10px 10px 0
+  margin-left: -10px
+
+.srch-result
+  .panel-body
+    background: #f5f5f5
+    position: fixed
+    list-style-type: none
+    padding: 10px
+    margin: 0
+    top: 50px
+    left: 250px
+    z-index: 2000
+    min-width: 50%
+    min-height: 100px
+    max-height: 250px
+    border: 1px lightgray solid
+    border-radius: 5px
+    overflow-y: scroll
+  li p
+    display: inline-block
+    cursor: pointer
+    margin: 0
+  li img
+    width: 30px
+    height: 30px
+
+.srch-item
+  padding: 5px
+.srch-item:hover
+  background: lightblue
 
 //for 2ndary menu
 .menubar
   background: lightyellow
   height: 25px
   padding: 5px 0 5px 0
+  >ul
+    display: inline-block
   >ul > li
     display: inline-block
     padding: 0 10px 0 10px
-  >span
+  span:first-child
+    color: purple
+    font-size: 120%
+    padding: 0 30px 0 10px
+
+  span:last-child
     float: right
     color: purple
     font-size: 120%
+    padding-right: 10px
+

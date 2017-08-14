@@ -2,16 +2,17 @@
 <div ng-include="'app/common/header.html'"></div>
 
 <!-- a carousel for special items -->
-<section class="sb-carousel">
-    <div class="sb-slider-box" ng-style="SHOPPING_CTRL.styleSliderBoxLeft">
-        <img ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
+<section class="sb-carousel" ng-controller="homeCtrl as HOME_CTRL">
+    <div class="sb-slider-box" ng-style="HOME_CTRL.styleSliderBoxLeft">
+        <img ng-repeat="IMG_NAME in HOME_CTRL.carouselImages"
              ng-src="asset/image/slide/{{IMG_NAME}}.png" class="sb-slide-image">
     </div>
-    <span id="nav-next" ng-click="SHOPPING_CTRL.slideForward()" >&#8678;</span>
-    <span id="nav-prev" ng-click="SHOPPING_CTRL.slideBackward()" >&#8680;</span>
-    <div class="sb-circle-box" ng-style="SHOPPING_CTRL.styleCircleBox">
-        <button class="sb-circle" ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
-            ng-click="SHOPPING_CTRL.goToSlide($index)" ng-style="SHOPPING_CTRL.styleCircleOpacity"></button>
+    <span id="nav-next" ng-click="HOME_CTRL.slideForward()" >&#8678;</span>
+    <span id="nav-prev" ng-click="HOME_CTRL.slideBackward()" >&#8680;</span>
+    <div class="sb-circle-box" ng-style="HOME_CTRL.styleCircleBox">
+        <button class="sb-circle" ng-repeat="IMG_NAME in HOME_CTRL.carouselImages"
+            ng-click="HOME_CTRL.goToSlide($index)"
+            ng-style="HOME_CTRL.getOpacityObj($index)"></button>
     </div>
 </section>
 
@@ -34,4 +35,19 @@
 <div ng-include="'app/common/footer.html'"></div>
 
 
-<!-- PROD.inventory TODO better looking search ??? <form id="hbz-searchbox" action="/search" method="get" class="debug" style="display: inline-block;">-->
+
+<!--
+<section class="sb-carousel" ng-controller="homeCtrl as HOME_CTRL">
+    <div class="sb-slider-box" ng-style="SHOPPING_CTRL.styleSliderBoxLeft">
+        <img ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
+             ng-src="asset/image/slide/{{IMG_NAME}}.png" class="sb-slide-image">
+    </div>
+    <span id="nav-next" ng-click="SHOPPING_CTRL.slideForward()" >&#8678;</span>
+    <span id="nav-prev" ng-click="SHOPPING_CTRL.slideBackward()" >&#8680;</span>
+    <div class="sb-circle-box" ng-style="SHOPPING_CTRL.styleCircleBox">
+        <button class="sb-circle" ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
+                ng-click="SHOPPING_CTRL.goToSlide($index)"
+                ng-style="SHOPPING_CTRL.getOpacityObj($index)"></button>
+    </div>
+</section>
+-->
