@@ -3,8 +3,8 @@
 var app = angular.module('shoppingApp', ['ngRoute']);
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {
-       templateUrl: 'app/home/home.html',
-       controller: 'homeCtrl'//MUST use quotes
+       templateUrl: 'app/home/home.html'
+       // controller: 'homeCtrl'//MUST use quotes
     })
     .when('/product', {
        templateUrl: 'app/product/product.html',
@@ -92,59 +92,14 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
          }
       }
    });
-/*
-   //start timer to cycle images in carousel
-   vm.slideTimerId = $interval(slideTimerTrigger, 10000);
-*/
 
    //==========home page==========
-/*
-   vm.carouselImages = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7'];
-   vm.curIndex = -1;//to avoid first time
-   vm.forward = true;
-   //use this formula to position sb-circle-box to center
-   var bw = $window.innerWidth;
-   var cb_pos = 100 * (bw - 35 * vm.carouselImages.length) / ( bw * 2);
-   //dynamic circle button opacity
-   vm.styleOpacityCircle = [1];//array of numbers matching each image, first one initially light up
-*/
    vm.curCategory = "All Categories";
    // vm.styleCircleBox = { "left":  cb_pos + "%" };//style object for circle box
    vm.showSearchList = false;//used to show drop-down
    vm.searchString = '';
    vm.searchList = [];
 
-/*
-   for (var idx=1; idx<vm.carouselImages.length; idx++)
-      vm.styleOpacityCircle.push(0.3);
-   vm.slideForward = function () {
-      interruptSlideShow();
-      vm.styleOpacityCircle[vm.curIndex] = 0.3;//dim
-      if (vm.curIndex < vm.carouselImages.length - 1) {//at end, don't slide further
-         vm.curIndex++;
-         vm.styleSliderBoxLeft = { "left": (-100 * vm.curIndex) + '%' };
-         vm.styleOpacityCircle[vm.curIndex] = 1;//light up
-      }
-   };
-   vm.slideBackward = function () {
-      interruptSlideShow();
-      vm.styleOpacityCircle[vm.curIndex] = 0.3;//dim
-      if (vm.curIndex > 0) {//curIndex == 0 stop slide further
-         vm.curIndex--;
-         vm.styleSliderBoxLeft = {"left": (-100 * vm.curIndex) + '%'};
-         vm.styleOpacityCircle[vm.curIndex] = 1;//light up
-      }
-   };
-   vm.goToSlide = function (index) {
-      interruptSlideShow();
-      vm.curIndex = index;
-      vm.styleSliderBoxLeft = { "left": (-100 * vm.curIndex) + '%' };
-      vm.styleOpacityCircle[vm.curIndex] = 1;//light up
-   };
-   vm.getOpacityObj = function (index) {
-      return { "opacity": vm.styleOpacityCircle[index] };
-   };
-*/
    vm.searchStringChange = function () {//based on search field content, show drop down list
       if (vm.searchString) {//has something, show drop-down list
          vm.searchList = getSearchList();
@@ -168,7 +123,7 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
    };
    vm.showThumbnails = function (category) {//search all products in this category
       vm.curCategory = category;
-      if (category === "All Categoreis") {
+      if (category === "All Categories") {
          vm.products = ProductData;
          return;
       }
@@ -184,34 +139,7 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
       }
       vm.products = list;//set to a smaller list
    };
-/*
 
-   //first class function to manage sliding images
-   function interruptSlideShow() {//stop interval, start timer 15s restart
-      if (angular.isDefined(vm.slideTimerId)) {
-         $interval.cancel(vm.slideTimerId);
-         vm.slideTimerId = undefined;
-      }
-      //start 15s timer to restart slide show
-      $timeout(function () {
-         console.log("========15 second timeout expired========");
-         vm.slideTimerId = $interval(slideTimerTrigger, 5000);
-      }, 30000, 1);
-   }
-   function slideTimerTrigger() {
-      var len = vm.carouselImages.length;
-      if (vm.curIndex === len - 1 || vm.curIndex === 0) //reverse direction at boundary
-         vm.forward = !vm.forward;
-      if (vm.curIndex === -1) vm.curIndex = 0;//first time
-      vm.styleOpacityCircle[vm.curIndex] = 0.3;//dim
-      if (vm.forward) vm.curIndex++;
-      else vm.curIndex--;
-      vm.styleSliderBoxLeft = { "left": (-100 * vm.curIndex) + '%' };
-      vm.styleOpacityCircle[vm.curIndex] = 1;//light up
-// console.log("==> ", vm.curIndex, " | ", vm.styleSliderBoxLeft, " | ", vm.carouselImages[vm.curIndex], " | ",
-// vm.forward ? " Forward" : " Backward" );
-   }
-*/
    //find a list of product names that matches search text
    function getSearchList() {
       var ret = [];//array of strings
@@ -404,7 +332,9 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
    };
    vm.clickProduct = function (product_idx) {
       vm.curProduct = vm.products[product_idx];
+      findAvailableQuantities();
       //also establish quantities array
+/*
       vm.quantities = [];
       var qty = vm.curProduct.inventory;
       var limit = qty;
@@ -412,7 +342,23 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
       else if (qty <= 0) limit = -1;
       for (var idx = 1; idx <= limit; idx++)
          vm.quantities.push(idx + '');//turn into string
+*/
       vm.activeImage = vm.curProduct.images[0];//any product will have at least 1
+   };
+   vm.navProduct = function (product_obj) {
+      vm.curProduct = product_obj;
+      findAvailableQuantities();
+/*
+      vm.quantities = [];
+      var qty = vm.curProduct.inventory;
+      var limit = qty;
+      if (qty > 10) limit = 10;
+      else if (qty <= 0) limit = -1;
+      for (var idx = 1; idx <= limit; idx++)
+         vm.quantities.push(idx + '');//turn into string
+*/
+      vm.activeImage = vm.curProduct.images[0];//any product will have at least 1
+      vm.navTo('/product');
    };
    vm.clickThumb = function (thumb_idx) {
       vm.activeImage = vm.curProduct.images[thumb_idx];
@@ -508,6 +454,16 @@ app.controller('shoppingCtrl', function ($location, $scope, $interval, $timeout,
             return vm.cityList[idx].city;
       }
       return null;
+   }
+   //sets up vm.quantities to be used in product card
+   function findAvailableQuantities() {
+      vm.quantities = [];
+      var qty = vm.curProduct.inventory;
+      var limit = qty;
+      if (qty > 10) limit = 10;
+      else if (qty <= 0) limit = -1;
+      for (var idx = 1; idx <= limit; idx++)
+         vm.quantities.push(idx + '');//turn into string
    }
 });
 

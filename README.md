@@ -3,7 +3,7 @@ products on sale and place orders.  This is part of the CodeGarage class project
 
 Please refer to this github repository: https://github.com/shorebird2016/gadget-haven
 
-Demo: https://gadgen-haven.herokuapp.com/
+Demo: https://gadget-haven.herokuapp.com/
 
 #### Main Goals
 - Experience full-stack development from front end to backend using MEAN stack.
@@ -118,36 +118,71 @@ To change delay - change value for switchInterval prop in ms (default 5000)
     - Product page
         - Design dynamic drop-down for product quantities based on inventory - if more than 10 in stock, show 10 itmes, 
           if not available, quantity drop-down and add button are hidden
-        - Sometimes thumbnails show up but main image doesn't, maybe previously stored image name is still around
-          (eg. duvet/full-image/v7.jpg doesn't exist)
     - General
         - Split out carousel code into homeCtrl (home.js) instead of keeping in app.js, this 
           should make carousel code easy to maintain
+    - Push to both Heroku and Github  
 -2017-08-14
+    - Total of 31 products in DB
+-2017-08-15
+    - Home Page
+        - Fix Bug - after displaying sub-category thumbnails, back to all category shows blank thumbs
+        - Carousel - randomly pick 8 full size images from all product images for showing
+          Choose a set of product images randomly every day to show in carousel, don't use separate ones
+        - Force images to be equal width/height such that carousel doesn't show white space on top
+    - General Design
+        - A new service called "dataProvider" is created to share data among controllers
+    - Total of 34 products in DB
+-2017-08-16
+    - Total of 41 products in DB
+    - Fix bug: less than 8 slides are generated
+-2017-08-17
+    - Home page: carousel
+        - Add jumbo text in the center to show name, slightly smaller text below to describe first set of features
+          plus a button to navigate to this product in product page immediately
+        - Change text when carousel slides
+    - Total of 45 products in DB
+-2017-08-18
+
 
 - Next steps 
     - Home page: Header features
+        - Use separator to group categories for easy access
         - After click search item, keep cursor inside text field
-        - A heart symbol on top, search/filter icons, mimic gadget flow site, keeping list of favorite products
+        - Add heart symbol on top, search/filter icons, mimic gadget flow site, keeping list of favorite products
         - Shopping cart icon should show item counts
+            (??? how to control SVG to add/delete vectors)
         - Design actions for each menu item on sub-header, mimic Gadget Flow/Amazon behavior
+            [randomly select a set of products, put them inside carousel with artificial banners]
     - Home page: Carousel features    
-        - Click circle lights it up but didn't turn off previous circle    
-        - Center 'sb-circle-box' during brwoser resize too
-        - Hover over circle should light up (Angular binds them such that CSS won't work any more)
-        - Make slide interval user adjustable
-        - Force images to be equal width/height such that carousel doesn't show white space on top
-        - Choose a set of product images randomly every day to show in carousel, don't use separate ones
+        - Bug: Click circle lights it up but didn't turn off previous circle  
+        - (1)Center 'sb-circle-box' (2)Compute height to maintain aspect ratio during brwoser resize
+        - Hover over circle should light up (??? Angular binds them such that CSS won't work any more)
+        - Suspect multiple timers after consecutive circle clicks causes fast firing
+        - How to detect background color (dark or light) to change jumbo text color accordingly
+        - Center jumbo multiline text based on browser width just like circle buttons box
+            (??? how to find out exact width of a block of lines)
+        - Change first feature bullet to describe the product better, upper case 1st letter
     - Home page: thumbnail    
         - Infinity scrolling, loads about 20 initially, when bottom is reached, add 50 more, till all products are consumed
     - Product page
-        - Add special strip with slightly smaller cards and arrows on both ends to manually 
+        - Mouse over thumbnails will automatically show in full size instead of click to show
+            [use different event]
+        - Search text should be cleared after search in product page
+        - Bug: Sometimes thumbnails show up but main image doesn't, maybe previously stored image name 
+            is still around (eg. duvet/full-image/v7.jpg doesn't exist)
+        - Add special strip with slightly smaller cards and arrows on both ends to manually
           move products back and forth similar to Amazon's, this is typically for something that's related to 
           product user is looking at
-    - Profile feature        
+            [Nice nifty feature, similar to "These products may be of interest to you"]
+    - Profile pages        
         - Make disabled fields obvious (gray out)
+        - New item - wish list
+    - Settings page
+        - Make carousel interval user adjustable, put in setting page
+        - More user controllable view features (??? what are they)
     - Backend, database
-        - Regroup products into many categories similar to Gadget Flow
+        - Regroup products into two level categories similar to Gadget Flow
         - Move user data under NodeJS control.  Later on maybe changing to PassportJS and MongoDB.
     - General
         - Split logic out to individual controllers (eg. home ctrl, product ctrl...etc) to modularize, also good
@@ -177,3 +212,15 @@ To change delay - change value for switchInterval prop in ms (default 5000)
   
 - Had a strange phenomena trying to check into github/deploy heroku - profile folder is completely broken on github
   and not found on heroku.  The only way to work around this is to re-create new repository and app.
+  
+- In route configuration, if controller is specified, and this controller is also specified in HTML ng-controller,
+  then the controller will be run twice
+      $routeProvider.when('/home', {
+         templateUrl: 'app/home/home.html'
+         controller: 'homeCtrl'  <=== will execute controller once
+      })
+  ``` <section class="sb-carousel" ng-controller="homeCtrl as HOME_CTRL"> ```  <== will execute once again 
+  
+- When changing to N slides in carousel, .sb-slide-image width = 1/N% and .sb-slider-box width = N * 100%  
+
+- JSON schema ?

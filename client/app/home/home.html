@@ -5,7 +5,7 @@
 <section class="sb-carousel" ng-controller="homeCtrl as HOME_CTRL">
     <div class="sb-slider-box" ng-style="HOME_CTRL.styleSliderBoxLeft">
         <img ng-repeat="IMG_NAME in HOME_CTRL.carouselImages"
-             ng-src="asset/image/slide/{{IMG_NAME}}.png" class="sb-slide-image">
+            ng-src="{{IMG_NAME}}" class="sb-slide-image">
     </div>
     <span id="nav-next" ng-click="HOME_CTRL.slideForward()" >&#8678;</span>
     <span id="nav-prev" ng-click="HOME_CTRL.slideBackward()" >&#8680;</span>
@@ -14,6 +14,12 @@
             ng-click="HOME_CTRL.goToSlide($index)"
             ng-style="HOME_CTRL.getOpacityObj($index)"></button>
     </div>
+    <!--jumbo text in the center of slide -->
+    <section class="sb-slider-caption">{{HOME_CTRL.curCarouselProduct.name}}</section>
+    <div class="sb-slider-info"><span>{{HOME_CTRL.curCarouselProduct.feature[0]}}</span></div>
+    <button class="sb-slider-ctrl" ng-click="SHOPPING_CTRL.navProduct(HOME_CTRL.curCarouselProduct)">
+        Take Me There</button>
+    </section>
 </section>
 
 <!-- rows of cards with product description, price, high level attractions -->
@@ -31,23 +37,4 @@
     </div>
 </section>
 
-
 <div ng-include="'app/common/footer.html'"></div>
-
-
-
-<!--
-<section class="sb-carousel" ng-controller="homeCtrl as HOME_CTRL">
-    <div class="sb-slider-box" ng-style="SHOPPING_CTRL.styleSliderBoxLeft">
-        <img ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
-             ng-src="asset/image/slide/{{IMG_NAME}}.png" class="sb-slide-image">
-    </div>
-    <span id="nav-next" ng-click="SHOPPING_CTRL.slideForward()" >&#8678;</span>
-    <span id="nav-prev" ng-click="SHOPPING_CTRL.slideBackward()" >&#8680;</span>
-    <div class="sb-circle-box" ng-style="SHOPPING_CTRL.styleCircleBox">
-        <button class="sb-circle" ng-repeat="IMG_NAME in SHOPPING_CTRL.carouselImages"
-                ng-click="SHOPPING_CTRL.goToSlide($index)"
-                ng-style="SHOPPING_CTRL.getOpacityObj($index)"></button>
-    </div>
-</section>
--->

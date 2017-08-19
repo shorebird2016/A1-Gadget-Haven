@@ -22,9 +22,10 @@ const CityList = [
 ];
 const Category = ["All Categories",
    "Sports & Outdoor", "Travel Accessory", "Camping Gear", "Pool/Beach Accessory", "Home Accessory",
-   "Wearable Tech", "Presentation Gadget", "Computer Accessory", "Workspace Gadget", "Bedtime product", "Smart Living",
-   "Storage & Orgnization", "3D Printing", "Home Media", "Smart Home", "Luxury", "For Kids", "Time Keeping",
-   "Glow & Light", "Loss Prevention & Security", "Car Accessory", "Smart Phone & Accessory", "Party Accessory", "Robot"
+   "Wearable Tech", "Presentation Gadget", "Computer Accessory", "Workspace Gadget", "Bedtime product",
+   "Smart Living", "Storage & Orgnization", "3D Printing", "Home Media", "Smart Home", "Luxury", "For Kids",
+   "Time Keeping", "Glow & Light", "Loss Prevention & Security", "Car Accessory", "Smart Phone & Accessory",
+   "Party Accessory", "Robot", "Headphones & Speakers", "Garden"
 ];
 const ProductData = [
    { id: 1000, name: "Day and Night Vision Laser Binoculars", shortDescription: "",
@@ -41,7 +42,7 @@ const ProductData = [
       price: 159.99, inventory: -10, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/binocular-night/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.png", "v7.png"],
-      feature: [ "Rugged binoculars for day or nighttime use",
+      feature: [ "Rugged binoculars for day or night time use",
          "Tripod socket accommodates all standard tripods", "32mm objective lenses",
          "Spot diameter 4m @ 50m", "Field of view: 294′ @ 1,000 yds.", "Minimum focus distance: 13′",
          "Exit pupil size: 4mm", "Eye relief: approx. 12.5mm", "Relative brightness index: 17.36",
@@ -61,7 +62,9 @@ const ProductData = [
       price: 53, inventory: 8, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/backtab/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg"],
-      feature: [ "10.2 x 7.1 x 0.75 Inches", "Water Repellent, Corrosion Resistant, Customizable", "Glass Fiber Reinforced Plastic, PVC",
+      feature: [ "Take a load off anywhere you go",
+         "10.2 x 7.1 x 0.75 Inches", "Water Repellent, Corrosion Resistant, Customizable",
+         "Glass Fiber Reinforced Plastic, PVC",
          "Measuring only 10.2 inches long, the size of an average tablet", "Water-repellent, tear-proof material",
          "Glass fiber reinforced plastic", "Strong stainless steel hinges", "Highly durable hinge system",
       ]
@@ -81,7 +84,7 @@ const ProductData = [
       price: 169.99, inventory: -5, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/doogee/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg", "v9.jpg"],
-      feature: [ "Bezel-Less with contents stretch from edge to edge", "5.5-inch Samsung Super AMOLED display",
+      feature: [ "A bezel-Less smartphone with contents stretch from edge to edge", "5.5-inch Samsung Super AMOLED display",
          "octa-core Helio P25 CPU", "6GB of RAM", "Dual cameras", "128GB of storage", "Android powered" ]
    },
    { id: 1030, name: "Vivowake Anti-Drowsiness Smartband", shortDescription: "",
@@ -148,7 +151,8 @@ const ProductData = [
       price: 100, inventory: 27, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/senstone/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg"],
-      feature: [ "attaches right to your gear", "instantly begin recording your audio to keep your notes",
+      feature: [ "Never lose a great idea again",
+         "attaches right to your gear", "instantly begin recording your audio to keep your notes",
          "automatically converts your speech into text and organizes your notes", "Totally wireless, compatible with a dozen languages",
          "integrates seamlessly into your style and daily life"
       ]
@@ -167,8 +171,10 @@ const ProductData = [
       price: 179, inventory: -5, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/duvet/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
-      feature: [ "Dual-zone temperature control", "Smart system removes humidity",
-         "Prevents bed bugs, and reduces sweating", "Uses an inflation system to lift the duvet back to its original position"
+      feature: [ "Turn your bed into a smart bed",
+         "Dual-zone temperature control", "Smart system removes humidity",
+         "Prevents bed bugs, and reduces sweating", "Uses an inflation system to lift the duvet " +
+         "back to its original position"
       ]
    },
    { id: 1080, name: "TAP-TAB Magnetic Organization System", shortDescription: "",
@@ -186,7 +192,8 @@ const ProductData = [
       price: 25, inventory: 855, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/tap-tab/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg"],
-      feature: [ "Ultra-strong magnets", "Hang and store your clothing, towels, accessories, notes, ideas...etc",
+      feature: ["Tidy up your everyday life with these ultra - strong magnets",
+         "Hang and store your clothing, towels, accessories, notes, ideas...etc",
          "stylish TAP-TAB Board and special magnet loops", "Toss your items onto the Board and they will magnetically stick in place",
          "Perfect for the kitchen, entryway, your bedroom, and even the bathroom"
       ]
@@ -206,7 +213,8 @@ const ProductData = [
       price: 60, inventory: 341, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/scribbler/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg", "v9.jpg"],
-      feature: [ "Create 3D designs all with your hand", "As you draw, your idea turns into a 3D structure",
+      feature: [ "Unleash your endless creativity with this pen",
+         "Create 3D designs all with your hand", "As you draw, your idea turns into a 3D structure",
          "Dual nozzle design", "Use multiple colors to add another layer of dimension",
          "Rrgonomic pen is comfortable to use", "Totally safe and clean with a lightweight design",
          "Inexpensive 1.75mm filament", "6 speeds with temperature adjustment"
@@ -228,7 +236,8 @@ const ProductData = [
       price: 249, inventory: 37, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/cujo/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg"],
-      feature: [ "Creates a personal firewall right at home", "Protects devices such as your laptop, smartphone, tablet",
+      feature: [ "Protect your entire connected home with this device",
+         "Creates a personal firewall right at home", "Protects devices such as your laptop, smartphone, tablet",
          "Offers business-level internet security", "Connects to your home’s Wi-Fi router",
          "Will never slow down your network", "Features parental controls to block certain websites, restrict time"
       ]
@@ -271,7 +280,8 @@ const ProductData = [
       price: 35, inventory: 150, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/wobblr/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.gif", "v5.jpg", "v6.jpg", "v7.jpg"],
-      feature: [ "Soccer-specific tailgate game", "A set of two, stand 11 steps apart",
+      feature: ["Ramp up the pre-game excitement with Wobblrs – the first occer-specific tailgate game",
+         "A set of two, stand 11 steps apart",
          "Kicking other team's wobblr via a soccer ball",
          "Plastic and aluminum design to always self-right", "The first team to 11 points wins"
       ]
@@ -315,7 +325,8 @@ const ProductData = [
       price: 59.99, inventory: -5, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
       image_url: "asset/image/product/digipen/",
       images: ["v1.jpg", "v2.jpg", "v3.jpg"],
-      feature: [ "Clip the small receiver to the top of your notepad",
+      feature: [ "The pen automatically captures handwritten notes and drawings and saves them as digital files",
+         "Clip the small receiver to the top of your notepad",
          "Write or draw normally with the premium ballpoint + digital device",
          "Pen writes in black ballpoint ink",
          "Notes and drawings are captured instantly as digital files",
@@ -582,6 +593,378 @@ const ProductData = [
       images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
       feature: [ "magical makeover in the form of this Levitating Indoor Plant Pot",
          "Keeps floating in mid-air and more visually pleasing with sci-fi enriched makeover"
+      ]
+   },
+   { id: 1270, name: "Smart Robotic Vacuum Cleaner", shortDescription: "",
+      category: ["Smart Home", "Home Accessory", "Smart Living"],
+      description: "Keeping your home neat and tidy will now be easy with this Smart Robotic Vacuum Cleaner. " +
+      "This cleaner has a wireless design. Additionally, there’s an ultra fine air filter. " +
+      "In fact, with this vacuum cleaner at home, you can make sure to let go of those tasks you hate to do. " +
+      "This cleaner works in the background. As a result, you will be able to keep your home clean and free from " +
+      "dust in a noise-free way. In addition, the battery life of this cleaner is about 1 hour and 30 minutes. " +
+      "You will also be able to control the device via remote control. " +
+      "By having one of this robotic vacuum cleaner at home, you will finally be able to " +
+      "make home cleaning as easy as a breeze..",
+      price: 305.39, inventory: 24, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/puppyoo/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg"],
+      feature: [ "Smart robotic vacuum cleaner",
+         "Equipped with ultra fine air filter and remotely controllable", "works in the background",
+         "battery life of this cleaner is about 1 hour and 30 minutes"
+      ]
+   },
+   { id: 1280, name: "WINBOT 830 Window Cleaning Robot", shortDescription: "",
+      category: ["Smart Home", "Home Accessory", "Smart Living", "Robot"],
+      description: "Ecovacs robotics is changing the home robotics category by moving from floors to windows with " +
+      "WINBOT W830 – the window cleaning Robot. Thanks to its smart suction fan, W830 cleans more surfaces including " +
+      "vertical glass, framed or frameless glass, frosted, filmed or colored glass, horizontal surfaces and more.W830 " +
+      "is smart and simple to use with one touch operation and automatic “n” or “Z” cleaning paths. " +
+      "It also has sensors to stop WINBOT W830 from moving across window frames, " +
+      "intelligently identify window edges and obstacles while leaving surfaces shining.",
+      price: 244.99, inventory: 126, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/winbot/",
+      images: ["v1.gif", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "The first window cleaning robot",
+         "Vertical glass, framed or frameless glass, frosted, filmed or colored glass, horizontal surfaces",
+         "Has sensors to stop WINBOT W830 from moving across window frames",
+         "Intelligently identify window edges and obstacles"
+      ]
+   },
+   { id: 1290, name: "Volterman Lightweight Smart Wallet", shortDescription: "",
+      category: ["Home Accessory", "Loss Prevention & Security"],
+      description: "Do more than just carry your cash. Protect your important items with the Volterman Lightweight Smart Wallet. " +
+      "Despite looking classically beautiful, it really goes the extra mile. Hidden under the leather exterior is " +
+      "a built-in power bank that offers wireless charging. In addition, " +
+      "it uses its connection to the app on your smartphone to know when to activate the built-in distance alarm. " +
+      "If you leave your wallet behind, you get an instant alert. " +
+      "Likewise, the wallet can also alert you if you leave your phone behind. The Volterman Wallet " +
+      "features worldwide GPS tracking so you can truly never lose it. " +
+      "In the event that someone does steal it, the built-in thief-detection camera will snap a photo of the offender. " +
+      "While you are on the go, you can remain connected thanks to the global Wi-Fi hotspot. " +
+      "With your choice of vegan or genuine leather, the Volterman Wallet is also waterproof..",
+      price: 145, inventory: 7, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/volterman/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg"],
+      feature: [ "Protect your important items", "Built-in power bank that offers wireless charging", "Waterproof, genuine leather",
+         "Vertical glass, framed or frameless glass, frosted, filmed or colored glass, horizontal surfaces",
+         "Built-in distance alarm connection to the app on your smartphone", "Features worldwide GPS tracking",
+         "Alert you if you leave your phone behind", "When wallet is stolen, the built-in thief-detection camera" +
+         " will snap a photo of the offender"
+      ]
+   },
+   { id: 1300, name: "Tapia AI Robot Companion", shortDescription: "",
+      category: ["Home Accessory", "Loss Prevention & Security", "Smart Home", "Smart Living", "Smart Phone & Accessory"],
+      description: "Gain a friend and an assistant in one with the Tapia AI Robot Companion. " +
+      "Complete with an adorable set of eyes, this delightful robot is capable of recognizing human voices and actions " +
+      "to cater better to your needs. Tapia can remember birthdays and names as it learns with each conversation. " +
+      "Shaped like an egg, Tapia can even inform you of the weather, help you make calls, or order a variety of products online. " +
+      "Tapia also has built-in security measures. You’re able to input a period and, if the designated user is absent " +
+      "for too long, Tapia will alert other family members or friends who make it perfect for the elderly or " +
+      "just those who live on their own. Operating on Android 5.1, Tapia can also take photos, play music, and much more..",
+      price: 1437, inventory: 3, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/tapia/",
+      images: ["v1.gif", "v2.jpeg", "v3.jpeg", "v4.jpeg", "v5.jpeg"],
+      feature: [ "capable of recognizing human voices and actions",
+         "Remember birthdays and names as it learns with each conversation",
+         "inform you of the weather, help you make calls",
+         "Built-in distance alarm connection to the app on your smartphone", "Features worldwide GPS tracking",
+         "Alert you if you leave your phone behind",
+         "When wallet is stolen, the built-in thief-detection camera will snap a photo of the offender",
+         "Built-in security measures for missing user over set period of time", "Also take photos, play music"
+      ]
+   },
+   { id: 1310, name: "Line-us Robot Drawing Arm", shortDescription: "",
+      category: ["Robot", "For Kids", "Smart Home", "Smart Phone & Accessory"],
+      description: "Produce incredible works of art with technology using the Line-us Robot Drawing Arm. " +
+      "Unlike any other device, this device mimics your motion with a pen. Using the companion app, " +
+      "Line-us recreates exactly what you draw on the screen of your device with a stylus. " +
+      "Additionally, this all happens in real time, so Line-us moves as you move. " +
+      "This amazing robot brings your drawings into the analog world so you can enjoy your works of art anywhere. " +
+      "In addition, Line-us is mountable to your table or even on a wall. " +
+      "It’s also compatible with your standard printer paper and sketchbook as well as a notebook. " +
+      "Furthermore, the Line-us interface works with Scratch, Arduino, Raspberry Pi, and more to explore your creativity. " +
+      "Finally, the app allows for some cool features such as viewing your drawing step by step.",
+      price: 197.5, inventory: 45, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/lineus/",
+      images: ["v1.jpg", "v2.gif", "v3.jpg"],
+      feature: [ "A state-of-the-art drawing robot",
+         "Mimics your motion with a pen, Line-us moves as you move",
+         "Recreates exactly what you draw on the screen of your device",
+         "Brings your drawings into the analog world", "Mountable to your table or even on a wall",
+         "Compatible with your standard printer paper and sketchbook",
+         "Interface works with Scratch, Arduino, Raspberry Pi..etc.",
+         "Cool features to view your drawing step by step"
+      ]
+   },
+   { id: 1320, name: "LG Hub Smart Home Robot", shortDescription: "",
+      category: ["Robot", "For Kids", "Smart Home", "Smart Phone & Accessory", "Smart Living"],
+      description: "Enjoy the fun side of robotics at home with the LG Hub Smart Home Robot. " +
+      "This robot gives Alexa a friendly face. Moreover, it’s a friendly design you can actually have at home. " +
+      "You can make it do fun stuff like playing music or alerting about the weather conditions and so on. " +
+      "There are two versions to go for – one larger than the other. " +
+      "The hardware is different here while the software is pretty much the same as Amazon Echo. " +
+      "You can combine the two versions at home. Use one in the living room while the other in your bedroom. " +
+      "The idea is to make your everyday life easy and hassle-free. And these cute robots will surely help you do so. " +
+      "Overall, this smart home robot will be a great companion for your everyday life.",
+      price: 125, inventory: 30, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/lghub/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "Gives Amazon's Alexa a friendly face",
+         "Playing music or alerting about the weather conditions",
+         "Two versions are available – one larger than the other, same software",
+         "Software is similar to Amazon Echo"
+      ]
+   },
+   { id: 1330, name: "Volosano micSTICK Mobile Microcurrent Therapy Device", shortDescription: "",
+      category: ["Travel Accessory", "Smart Living", "Smart Phone & Accessory"],
+      description: "Revive yourself after long travels when you have the Volosano micSTICK Mobile Microcurrent Therapy Device. " +
+      "This handheld device uses low-frequency microcurrent wave signal generation technologies. " +
+      "Working in conjunction with the companion app, the micSTICK helps relieve aches and fatigues on your travels. " +
+      "It’s like a compact and portable therapist that you can take anywhere. " +
+      "The micSTICK features retractable cables to be simple and easy to use and store. " +
+      "All you need to do is put the electrodes on designated acupoints, plug into your smartphone, " +
+      "and use the app to adjust your settings. The micSTICK sends microcurrent pulses into your body " +
+      "to stimulate your cells and rebalance your body. It brings together the theories of acupuncture " +
+      "and microcurrent technology to relieve pain and get you going. The app is chock full of guides," +
+      " programs, and a body diagram so you can make the most of the micSTICK.",
+      price: 109, inventory: 60, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/volosano/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg"],
+      feature: [ "Revive yourself after long travels with this Microcurrent Therapy Device",
+         "Uses low-frequency microcurrent wave signal generation technologies",
+         "Helps relieve aches and fatigues on your travels",
+         "Features retractable cables to be simple and easy to use and store",
+         "Place electrodes on designated acupoints and plug into your smartphone"
+      ]
+   },
+   { id: 1340, name: "Grey Double Hanging Cacoon", shortDescription: "",
+      category: ["Camping Gear", "Smart Living", "Sports & Outdoor" ],
+      description: "Set an atmosphere of outdoor camping indoors. By simply looking at the Grey Double Hanging Cacoon, " +
+      "you can say it’s kind of a luxury refuge for hanging indoors. If you want, you can carry it outdoors too. " +
+      "Created by Cacoon in Netherlands, this could become your next awesome garden seater. " +
+      "The hammock can fold down to a manageable size when not in use which can be easily carried " +
+      "from one place to another with the help of the handy carry bag. " +
+      "The hammock has been made out of a blend of cotton and polyester. " +
+      "It’s UV and water resistant with anodized, rust proof aluminium steel inner rings " +
+      "supplied in 8 sections inside the cacoon. Time to make those afternoon naps a bit more relaxing, don’t you think?",
+      price: 471, inventory: 7, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/cacoon/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "Luxury hammock refuge for hanging indoors",
+         "Created by Cacoon in Netherlands",
+         "Comes with handy carry bag made out of a blend of cotton and polyester",
+         "UV and water resistant with anodized, rust proof aluminium steel inner rings in 8 sections"
+      ]
+   },
+   { id: 1350, name: "Wall Mounted Plant Pot", shortDescription: "",
+      category: ["Camping Gear", "Smart Living", "Home Accessory" ],
+      description: "This Wall Mounted Plant Pot is absolutely perfect for growing plants or cultivating a fish tank at home. " +
+      "You just need to set it up on your favorite space in the wall. In fact, the design is what makes it one of a kind. " +
+      "You can either use it as a simple plant pot or also as a fish tank. In fact, " +
+      "the plant pot looks more of a visual treat for your home. In addition, " +
+      "it helps you grow your plants or nurture your favorite fish without taking up much space in the house. " +
+      "Also, the acrylic design blends beautifully with any home decor. " +
+      "As a matter of fact, this plant pot looks great and is simply perfect for " +
+      "those who prefer minimal home decor over anything else.",
+      price: 22.37, inventory: 450, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/wallgreen/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "Growing plants or cultivating a fish tank at home",
+         "A visual treat for your home without taking up much space",
+         "Acrylic design blends beautifully with any home decor"
+      ]
+   },
+   { id: 1360, name: "Vitra Wiggle Cardboard Side Chair", shortDescription: "",
+      category: [ "Smart Living", "Home Accessory", "Party Accessory", "Luxury" ],
+      description: "Introducing the Vitra Wiggle Cardboard Side Chair. This thing of beauty is truly unique. " +
+      "The majority of the chair features corrugated cardboard. This material, often associated with boxes, " +
+      "has a stunning curve design to cradle your body in the perfect position. " +
+      "Pairing with the cardboard is a hardboard material. It lines the edges to add to the stability and durability. " +
+      "Incredibly, this chair is extremely sturdy despite the commonplace materials. " +
+      "Coming in a natural tan color, the Wiggle Chair is the perfect complement to any space. " +
+      "It adds an instant pop of fun and quirky. The curves offer a sense of drama to an otherwise boring " +
+      "interior space. Whether it’s at your dining table or in the corner of the room, " +
+      "the Wiggle Chair is an instant conversation starter.",
+      price: 1175, inventory: 4, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/vitra-wiggle/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg"],
+      feature: [ "Features corrugated cardboard, natural tan color",
+         "Stunning curve design to cradle your body in the perfect position",
+         "Pairing with the cardboard is a hardboard material",
+         "It lines the edges to add to the stability and durability",
+         "The curves offer a sense of drama"
+      ]
+   },
+   { id: 1370, name: "Vitra Prismatic Geometric Side Table", shortDescription: "",
+      category: [ "Smart Living", "Home Accessory", "Party Accessory", "Luxury" ],
+      description: "Upgrade your space with a simple addition such as the Vitra Prismatic Geometric Side Table. " +
+      "Offering stunning beauty, this three-legged table celebrates geometry and its many forms. " +
+      "The surface of the Prismatic Table takes on a hexagonal design. " +
+      "The entire table fuses together three pieces of coated sheet aluminum. " +
+      "Each leg extends into its own portion of the surface of the table. " +
+      "Coming in both black and white, the Prismatic Table will instantly remind you of Japanese origami. " +
+      "And, that’s not without intent. The designer is Isamu Noguchi and he created this design in 1957. " +
+      "The brilliant minds at Vitra have given new life to this classic and it " +
+      "fits in with the rest of his designs seamlessly.",
+      price: 750, inventory: 10, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/prismatic/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg"],
+      feature: [ "A three-legged table celebrates geometry and its many forms",
+         "Takes on a hexagonal design in both black and white",
+         "Fuses together three pieces of coated sheet aluminum",
+         "Each leg extends into its own portion of the surface, reminding of Japanese origami",
+         "Create by Isamu Noguchi in 1957", ""
+      ]
+   },
+   { id: 1380, name: "KeepKey – Bitcoin Hardware Wallet", shortDescription: "",
+      category: [ "Loss Prevention & Security", "Computer Accessory", "Smart Phone & Accessory" ],
+      description: "Protect your money from hackers and thieves with the KeepKey Bitcoin hardware wallet. " +
+      "You can consider it to be more like your own private Bitcoin vault. " +
+      "The device will work with the Bitcoin wallet software on your computer by taking over the management of the " +
+      "private key generation, private key storage and transaction signing. " +
+      "It then generates a Bitcoin private key by using a random number generator " +
+      "which is combined with the randomness provided by your computer. " +
+      "Once you generate your private key, you will receive a one time opportunity to write down a backup of your " +
+      "KeepKey that is available in the form of a twelve word recovery sentence. " +
+      "Since your KeepKey is PIN protected, it will be useless even if it falls under wrong hands. " +
+      "Your money stay safe and under a secure storage system.",
+      price: 239, inventory: 50, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/keepkey/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg" ],
+      feature: [ "Protect your money from hackers and thieves",
+         "Like your own private Bitcoin vault, PIN protected key",
+         "Taking over the management of the private key generation",
+         "Generates a Bitcoin private key by using a random number generator",
+         "You will receive a one time opportunity for a backup of your KeepKey",
+         "Available in the form of a twelve word recovery sentence"
+      ]
+   },
+   { id: 1390, name: "EyeQue Personal Vision Tracker", shortDescription: "",
+      category: ["Travel Accessory", "Smart Phone & Accessory", "Home Accessory"],
+      description: "The EyeQue Personal Vision Tracker is a super convenient way to check your vision and keep track of " +
+      "it over time. The EyeQue team has developed a small optical device and smartphone app (based on an MIT patent) " +
+      "that makes vision assessment possible anywhere, anytime. After a few rounds of measurements, " +
+      "you will receive a set of 'EyeGlass Numbers' which can be used to purchase glasses online. " +
+      "Use our comprehensive personal charts to track your eyesight changes over time " +
+      "and share them with your eye care professional. No appointment, no co-pay, just you, your smartphone, and EyeQue.",
+      price: 18, inventory: 457, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/eyeque/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg"],
+      feature: [ "super convenient way to check your vision and keep track of it",
+         "Small optical device and smartphone app",
+         "Generate a set of 'EyeGlass Numbers' which can be used to purchase glasses online",
+         "Comprehensive personal charts to track your eyesight changes over time",
+         "Suggest automations to make your life easier with gesture control and voice activation"
+      ]
+   },
+   { id: 1400, name: "Nix Mini Color Sensor", shortDescription: "",
+      category: ["Workspace Gadget", "Smart Phone & Accessory", "Computer Accessory"],
+      description: "Grab any color you set your eyes on with the Nix Mini Color Sensor. " +
+      "This hand-held tool measures the color of any surface and provides instant in-app paint matches. " +
+      "Compatible with Android and Apple devices, it matches with leading brands such as Sherwin Williams and Benjamin Moore. " +
+      "Measuring just under 1.5”, the Nix Mini is the smallest color sensor to ever hit the market. " +
+      "Don’t let its size fool you, the Nix Mini is a powerful tool that will help designers, painters, and homeowners " +
+      "quickly and accurately match colors to paints. Its compact size and lightweight design allow for precise sensor " +
+      "placement and maximum portability. Using the Nix Paint app, users can match to more than 10,000 paints, " +
+      "discover color harmonies, save custom palettes, and even locate the nearest paint shop.",
+      price: 79, inventory: 1120, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/nix/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg", "v9.jpg", "v10.jpg"],
+      feature: [ "A hand-held tool measures the color of any surface and provides instant in-app paint matches",
+         "Compatible with Android and Apple devices, with size under 1.5",
+         "Matches with leading brands such as Sherwin Williams and Benjamin Moore",
+         "Help designers, painters, and homeowners accurately match colors to paints",
+         "compact size and lightweight design, precise sensor placement and maximum portability",
+         "Nix Paint app can match to more than 10,000 paints, discover color harmonies, save custom palettes"
+      ]
+   },
+   { id: 1410, name: "Plox Star Wars Levitating Death Star Speaker", shortDescription: "",
+      category: ["Workspace Gadget", "Smart Phone & Accessory", "Headphones & Speakers"],
+      description: "Bring your galactic dreams to life with the Plox Star Wars Levitating Death Star Speaker. " +
+      "Using the latest technology, this speaker system actually floats in mid-air. " +
+      "Totally defying gravity, the Death Star Speaker is attention grabbing and mesmerizing. " +
+      "As it floats, the speaker also rotates slowly in a full 360 degrees. " +
+      "This allows the audio to fill every corner of the room to make every spot the sweet spot. " +
+      "The Death Star Speaker achieves this rotation and flotation with a magnetic base. " +
+      "Using the force, it suspends beautifully for all to see. Of course, the speaker itself is also powerful, " +
+      "just as you’d expect with the Death Star. The 5-watt speaker pumps out some serious tunes. " +
+      "In addition, the battery provides five hours of playtime on just a single charge.",
+      price: 199.99, inventory: 25, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/plox/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "Bring your galactic dreams to life",
+         "Totally defying gravity, attention grabbing and mesmerizing",
+         "Rotates slowly in a full 360 degrees",
+         "Allows the audio to fill every corner of the room",
+         "Achieves this rotation and flotation with a magnetic base",
+         "5-watt speaker pumps out some serious tunes",
+         "the battery provides five hours of playtime"
+      ]
+   },
+   { id: 1420, name: "helloplant Smart Plant Sensor", shortDescription: "",
+      category: ["Garden", "Smart Phone & Accessory", "Smart Living"],
+      description: "Ensure you have the greenest of all thumbs with the helloplant Smart Plant Sensor. " +
+      "Equipped with multiple sensors, this device goes right into the soil around your plant. " +
+      "From there, it allows your plants to talk to you. It can tell you when your plant needs water, " +
+      "if the conditions are too hot or cold, or how much sun exposure it needs. " +
+      "By measuring soil moisture, light intensity, ambient and soil temperatures, " +
+      "helloplant takes all of the guesswork out of maintaining your plants. " +
+      "These sensors are constantly working and checking in to give you peace of mind. " +
+      "With alerts coming in right to your smartphone, all you have to do is what the app suggests. " +
+      "It doesn’t matter how many plants you’ve failed in the past, helloplant is here to " +
+      "make you a gardener extraordinaire.",
+      price: 25.88, inventory: 720, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/helloplant/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg", "v4.jpg"],
+      feature: [ "Ensure you have the greenest of all thumbs with this sensor",
+         "It allows your plants to talk to you, needs water, the conditions are too hot or cold",
+         "By measuring soil moisture, light intensity, ambient and soil temperatures",
+         "Alerts coming in right to your smartphone, app suggests what to do"
+      ]
+   },
+   { id: 1430, name: "FOVE – Eye Tracking VR Headset", shortDescription: "",
+      category: ["Wearable Tech", "Smart Phone & Accessory", "For Kids"],
+      description: "FOVE VR Headset gives you the feel of human connection in the virtual world. " +
+      "Look, laugh, and communicate naturally with virtual characters and other players. " +
+      "By implementing FOVE technology, game developers can create genuine two-way interaction experiences " +
+      "in virtual worlds. It also enables simulated light field rendering based on a person’s " +
+      "real-time field-of-view. This creates a sense of presence and immersion. " +
+      "You will also get to enjoy an improved performance as game engines control GPUs to " +
+      "optimize rendering in real time. Focus the quality where it’s needed, " +
+      "precisely where the user is looking. Navigate user interfaces quickly and effortlessly using a " +
+      "person’s gaze, without a mouse or motion controls. " +
+      "If you consider VR as the next big thing in computing, " +
+      "this VR headset can be a gateway to show you how!",
+      price: 599, inventory: 15, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/fove/",
+      images: ["v1.jpg", "v2.jpg", "v3.jpg"],
+      feature: [ "Gives you the feel of human connection in the virtual world",
+         "Look, laugh, and communicate naturally with virtual characters and other players",
+         "Creates a sense of presence and immersion, two-way interaction experiences",
+         "Enables simulated light field rendering based on a person’s real-time field-of-view",
+         "Navigate user interfaces quickly and effortlessly using a person’s gaze"
+      ]
+   },
+   { id: 1440, name: "GreenTraveler – World’s Best Travel-Friendly Food Container", shortDescription: "",
+      category: ["Sports & Outdoor", "Smart Phone & Accessory", "Travel Accessory"],
+      description: "GreenTraveler designs reusable, travel-friendly containers and accessories to easily " +
+      "transport food, beverages, and other daily items for those who want to carry food and beverages " +
+      "for a day out of the house without leaking or spilling. Taking the GreenTraveler everywhere as your " +
+      "primary container, you may be amazed how many uses it has – keep liquids in, keep rain and water out, " +
+      "store food and beverages, use for first aid or baby supplies, or for any items you need to be protected. " +
+      "It may feel like a puzzle the first time, but once you get the hang of it, you’ll wonder why " +
+      "it didn’t exist before. The Original GreenTraveler replaces many daily items you may use every day. " +
+      "Take your GreenTraveler to the mountains, the sea, or to the office. " +
+      "Take it on any adventure or bring leftovers away from a restaurant without disposing of another container. " +
+      "For catching up with the updates from the team, follow GreenTraveler on Facebook, Twitter, and Instagram.",
+      price: 35, inventory: 550, //inventory: -10 = no re-reorder, -5 = back order, > 0 actual quantity
+      image_url: "asset/image/product/greencup/",
+      images: ["v1.png", "v2.jpg", "v3.jpg", "v4.jpg", "v5.jpg", "v6.jpg", "v7.jpg", "v8.jpg"],
+      feature: [ "Designs reusable, travel-friendly containers and accessories",
+         "Transport food, beverages, and other daily items",
+         "Keep liquids in, keep rain and water out, store food and beverages",
+         "Replaces many daily items you may use every day",
+         "compact size and lightweight design, precise sensor placement and maximum portability"
       ]
    },
 ];

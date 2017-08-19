@@ -14,7 +14,7 @@ li img {
 
 body {
   background: linear-gradient(white, #fafffc);
-  animation: fly-in 0.3s linear 0.05s; }
+  animation: fly-in 0.5s linear 0.1s; }
 
 h3 {
   text-align: center; }
@@ -72,17 +72,41 @@ h3 {
   min-height: 400px; }
 
 .sb-slide-image {
-  width: 25%;
-  min-height: 400px;
-  height: 100%; }
+  width: 12.5%;
+  height: 700px; }
 
 .sb-slider-box {
   display: flex;
   position: relative;
-  width: 400%;
+  width: 800%;
   left: 0;
   align-items: flex-end;
   transition: left 1s ease-in-out 0.1s; }
+
+.sb-slider-caption {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  font-size: 70px;
+  color: white; }
+
+.sb-slider-info {
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  color: white;
+  font-size: 40px; }
+  .sb-slider-info span {
+    text-align: center; }
+
+.sb-slider-ctrl {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  background: white; }
 
 .sb-circle-box {
   position: absolute;
